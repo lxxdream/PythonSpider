@@ -1,0 +1,4 @@
+
+*.xml
+.idea/PythonSpider.iml
+.DS_Store
