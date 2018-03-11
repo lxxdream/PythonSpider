@@ -77,43 +77,99 @@ print(sum) '''
 # for i in lt:
 #     print('我叫%s, 我来自%s' %(i['name'], i['info'][1][1]))
 
+#8 使用循环，实现模拟钟表 输入小时、分钟、秒，输出下一秒的时间
+# import time
 
-import time
+# while True:
+#     hour = int(input('hout:'))
+#     minute = int(input('minute:'))
+#     second = int(input('second:'))
 
-while True:
-    # 输出型阻塞
-    hour = input('hour:')
-    minute = input('minute:')
-    second = input('second:')
+#     if (hour < 0 or hour >= 24) or (minute < 0 or minute >=60) or (second < 0 or second >= 60):
+#         print('Wrong!! Please input again')
+#         continue
+    
+#     while True:
+#         time.sleep(1)
+#         second += 1
 
-    hour = int(hour)
-    minute = int(minute)
-    second = int(second)
+#         if (second == 60):
+#             second = 0
+#             minute += 1
 
-    # 参数入口检测
-    if not (hour>=0 and hour<24) and not (minute>=0 and minute<60) and not (second>=0 and second<60):
-        print('wrong, please input again')
-        # 输入不符合规范,就跳出本次循环,重新输入
-        continue
+#         if (minute == 60):
+#             minute = 0
+#             hour += 1
 
-    while True:
-        # 1秒钟一次 second自加1
-        time.sleep(1)
-        second += 1
+#         if (hour == 24):2
+#             hour = 0
 
-        # 考虑循环的极限节点
-        if second == 60:
-            second = 0
-            minute += 1
-        # 考虑循环的极限节点
-        if minute ==60:
-            minute = 0
-            hour += 1
-        # 考虑循环的极限节点
-        if hour == 24:
-            hour = 0
-        # 格式化输出
-        print('%02d:%02d:%02d' %(hour, minute, second))
+#         print('%02d:%02d:%02d' %(hour, minute, second))
+
+# 9 输入m，n，打印m行n列表格，表格里面的内容从1开始，先横再纵
+# m = int(input('m='))
+# n = int(input('n='))
+# for i in range(1, m * n + 1):
+#     print(i, end = ' ')
+#     if i % n == 0 :
+#         print('')
+
+#10 九九乘法表
+for i in range(1, 10):
+    for j in range(1, i + 1):
+        print('%d*%d=%2d' %(j, i, j * i), end =' ')
+    print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
