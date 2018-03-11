@@ -52,20 +52,68 @@ print(sum) '''
 # print('')
 
 # 5 打印字母Z-A 每5个字母一行
-lt = []
-for i in range(ord('A'), ord('Z') + 1):
-    lt.append(chr(i))
-print(lt)
-lt.reverse()
-print(len(lt))
-for i in range(0, len(lt)):
-    print(lt[i], end = ' ')
-    if i%4 == 0:
-        print('')
-print('')
-print(type(lt[0]))
+# lt = []
+# for i in range(ord('A'), ord('Z') + 1):
+#     lt.append(chr(i))
+# print(lt)
+# lt.reverse()
+# print(len(lt))
+# for i in range(0, len(lt)):
+#     print(lt[i], end = ' ')
+#     if i%4 == 0:
+#         print('')
+# print('')
+# print(type(lt[0]))
+
+#6 根据列表lt,实现输出: '我叫xxx，我来自xxx'
+# lt = [
+#     {'name':'张三', 'age':18, 'info':[('phone', '123'), ('address', '江苏南京')]},
+#     {'name':'李四', 'age':19, 'info':[('phone', '789'), ('address', '浙江杭州')]},
+#     {'name':'赵钱', 'age':20, 'info':[('phone', '456'), ('address', '湖北武汉')]},
+#     {'name':'孙李', 'age':21, 'info':[('phone', '000'), ('address', '广东深圳')]},
+#     {'name':'王五', 'age':22, 'info':[('phone', '111'), ('address', '河南洛阳')]},
+# ]
+
+# for i in lt:
+#     print('我叫%s, 我来自%s' %(i['name'], i['info'][1][1]))
 
 
+import time
+
+while True:
+    # 输出型阻塞
+    hour = input('hour:')
+    minute = input('minute:')
+    second = input('second:')
+
+    hour = int(hour)
+    minute = int(minute)
+    second = int(second)
+
+    # 参数入口检测
+    if not (hour>=0 and hour<24) and not (minute>=0 and minute<60) and not (second>=0 and second<60):
+        print('wrong, please input again')
+        # 输入不符合规范,就跳出本次循环,重新输入
+        continue
+
+    while True:
+        # 1秒钟一次 second自加1
+        time.sleep(1)
+        second += 1
+
+        # 考虑循环的极限节点
+        if second == 60:
+            second = 0
+            minute += 1
+        # 考虑循环的极限节点
+        if minute ==60:
+            minute = 0
+            hour += 1
+        # 考虑循环的极限节点
+        if hour == 24:
+            hour = 0
+        # 格式化输出
+        print('%02d:%02d:%02d' %(hour, minute, second))
 
 
 
