@@ -247,8 +247,47 @@ print(sum) '''
 # print(my_hex2(255))
 
 
+# ---------------------------------------------------------------------------------------------------------------------------------
 
 
+# 1 有四个数字：1、2、3、4，能组成多少个互不相同且无重复数字的三位数？各是多少？
+# lt =[]
+# for i in range(1, 5):
+#     for j in range(1, 5):
+#         for k in range(1, 5):
+#             if (i != j) and (i != k) and (j != k):
+#                 #print(i, j, k)
+#                 lt.append(str(i)+str(j)+str(k))
+# print(lt)
+
+# lt = []
+# for i in range(123, 433):
+#     a = (i // 100)
+#     b = (i // 10) % 10
+#     c = i % 10
+#     if (a != b) and (a != c) and (b != c) and (0 < a < 5) and (0 < b < 5) and (0 < c < 5):
+#         print(i)
+#         lt.append(i)
+
+# list_num = [1, 2, 3, 4]
+# lt = [i * 100 + j * 10 + k for i in list_num for j in list_num for k in list_num if i != j and i != k and j != k]
+# print(lt)
+
+# list_num = [1, 2, 3, 4]
+# for i in list_num:
+#     list1 = list_num.copy()
+#     list1.remove(i)
+#     for j in list1:
+#         list2 = list1.copy()
+#         list2.remove(j)
+#         for k in list2:
+#             print(i, j, k)
+
+# from itertools import permutations
+
+# # permutations(p[,r]);返回p中任意取r个元素做排列的元组的迭代器
+# for i in permutations([1, 2, 3, 4], 3):
+#     print(i)
 
 
 
