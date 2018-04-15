@@ -3,3 +3,5 @@
 .idea/PythonSpider.iml
 .DS_Store
 .vscode/launch.json
+Toutiao/Images
+*.pyc
