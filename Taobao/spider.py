@@ -6,9 +6,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pyquery import PyQuery as pq
 from Taobao.config import *
+from selenium.webdriver.chrome.options import Options
 
+options = Options()
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+browser = webdriver.Chrome(chrome_options=options)
 #browser = webdriver.Chrome()
-browser = webdriver.PhantomJS(service_args=SERVICE_ARGS)
+#browser = webdriver.PhantomJS(service_args=SERVICE_ARGS)
+
 wait = WebDriverWait(browser, 10)
 
 browser.set_window_size(1400, 900)
