@@ -443,8 +443,11 @@ x+100=n^2和x+100+168=m^2
 #         if (m+n)*(m-n)==168:#m,n都是整数
 #             print(n**2-100)
 
-
-
+'''斐波那契数列'''
+nums = [1, 1]
+for i in range(2, 101):
+    nums.append(nums[i-1]+nums[i-2])
+print(nums)
 
 
 
